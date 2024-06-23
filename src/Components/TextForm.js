@@ -59,9 +59,8 @@ export default function TextForm(props) {
         words=text.split(/\s+\S+/).length;
     }
     const buttoncopy=()=>{
-        var text=document.getElementById("mybox")
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        
+        navigator.clipboard.writeText(text);
         document.getSelection().removeAllRanges();
         if(text!==""){
         props.showAlert("Copied Successfully","success")
