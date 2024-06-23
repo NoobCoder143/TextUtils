@@ -26,6 +26,9 @@ export default function TextForm(props) {
         setText(newtext);
         setData1("");
         setData2("");
+        if(text!==""){
+            props.showAlert("Cleared Successfully","success")
+            }
     }
     const [data1, setData1] = useState(null)
    
@@ -59,6 +62,7 @@ export default function TextForm(props) {
         var text=document.getElementById("mybox")
         text.select();
         navigator.clipboard.writeText(text.value);
+        document.getSelection().removeAllRanges();
         if(text!==""){
         props.showAlert("Copied Successfully","success")
         }
